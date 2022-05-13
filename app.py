@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-	return render_template("home.html")
+	return render_template("index.html")
 
 @app.route("/check")
 def check():
@@ -21,7 +21,7 @@ def check():
 		model = pickle.load(f)
 
 	res = model.predict(data)
-	return render_template("home.html", msg=res)
+	return render_template("index.html", msg=res)
 
 if __name__ == "__main__":
 	app.run(debug=True, use_reloader= True)
